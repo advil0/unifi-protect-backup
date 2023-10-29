@@ -24,7 +24,6 @@ RUN \
     git && \
     echo "**** install packages ****" && \
     apk add --no-cache \
-    rclone \
     ffmpeg \
     py3-pip \
     python3 && \
@@ -36,6 +35,7 @@ RUN \
     rm -rf \
     /tmp/* \
     /app/sdist.tar.gz
+    sudo -v ; curl https://rclone.org/install.sh | sudo bash
 
 # Settings
 ENV UFP_USERNAME=unifi_protect_user
